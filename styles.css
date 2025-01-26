@@ -1,0 +1,595 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+
+/* Start Global-Rules */
+:root {
+  --main-color: #9777fa;
+  --main-duration: 0.3s;
+  --main-alt-color: #6d4bd3;
+  --section-padding: 80px;
+  --head-title: #4c6ef5;
+  --head-bg-color: #fff9f3;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #fafcfe;
+}
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--main-alt-color);
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* End Global-Rules */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small Screen */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium Screen  */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large Screen */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* Start Default Styles */
+/* Start Style Active link  */
+.active-link {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--main-color) !important;
+  transform: translateY(-2px);
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  -o-transform: translateY(-2px);
+}
+/* End Style Active link  */
+/* Start Social icon log[in , up] */
+.social {
+  font-size: 14px !important;
+  position: unset !important;
+}
+.btn-social {
+  border: 1px solid;
+  margin-right: 5px;
+  border-radius: 20px;
+}
+@media (max-width: 790px) {
+  .btn-social {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin: 15px 5px;
+  }
+}
+.btn-google .social,
+.btn-facebook .social,
+.btn-github .social {
+  background-color: white;
+}
+.btn-google .social {
+  color: #db4437;
+}
+.btn-facebook .social {
+  color: #4267b2;
+}
+.btn-github .social {
+  color: black;
+}
+/* End Social icon log[in , up] */
+/* Start Effect listing */
+.effect li {
+  position: relative;
+}
+.effect li a {
+  font-size: 16px;
+  color: #636477;
+  position: relative;
+  padding: 14px 22px 10px 35px;
+  transition: var(--main-duration);
+  -webkit-transition: var(--main-duration);
+  -moz-transition: var(--main-duration);
+  -ms-transition: var(--main-duration);
+  -o-transition: var(--main-duration);
+}
+.effect li a::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  opacity: 0.7;
+  transition-duration: 0.2s;
+}
+.effect li a:hover {
+  padding-left: 38px;
+  transition: var(--main-duration);
+  color: var(--main-color);
+  -webkit-transition: var(--main-duration);
+  -moz-transition: var(--main-duration);
+  -ms-transition: var(--main-duration);
+  -o-transition: var(--main-duration);
+}
+/* End Effect listing */
+/* Start Job-listing Styles */
+.card {
+  border: 1px solid #e7e7e7;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.card-title {
+  transition: var(--main-duration);
+  font-weight: 700;
+}
+.card-title:hover {
+  color: var(--main-color);
+  cursor: pointer;
+}
+.company {
+  color: var(--main-color);
+  cursor: pointer;
+}
+.card-text .info {
+  color: #aaa;
+  font-size: 14px;
+}
+.card-text .info i {
+  margin-right: 5px;
+  margin-left: 10px;
+}
+.desc-text {
+  color: #727272;
+  line-height: 1.6;
+}
+.card .job-icon img {
+  width: 60px;
+  height: 60px;
+}
+.price {
+  font-size: 16px;
+  margin-left: 10px;
+  font-weight: 600;
+  color: #5192ff;
+}
+.btn-outline-secondary i {
+  margin-right: 0.5rem;
+}
+/* End Job-listing Styles */
+/* Start Default card for [similar , saved => jobs] */
+.app-btn {
+  position: absolute;
+  right: 0;
+  bottom: 15px;
+}
+@media (max-width: 545px) {
+  .app-btn {
+    position: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+}
+.app-btn button {
+  padding: 7px 15px !important;
+}
+.btn {
+  font-size: 14px;
+  margin-right: 10px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  background-color: var(--main-alt-color);
+  color: white;
+}
+.btn-1-color {
+  background-color: #ffcfc5;
+}
+.btn-2-color {
+  background-color: #c5e3ff;
+}
+.btn-3-color {
+  background-color: rgba(151, 119, 250, 0.12);
+}
+.btn i {
+  font-size: 5px;
+  position: relative;
+  top: -2px;
+  right: 4px;
+  bottom: 10px;
+  color: var(--main-color);
+}
+/* End Default card for [similar , saved => jobs] */
+/* Start Default login,signup */
+.main-start h1 {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 20%;
+}
+.main-start {
+  min-height: 93vh;
+  background-image: url(/assets/images/Log-in/Log-in.jpg);
+  background-size: cover;
+  animation: change-background 15s ease-in-out infinite;
+  -webkit-animation: change-background 15s ease-in-out infinite;
+}
+.main-start::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgb(0 0 0 /55%);
+}
+/* btn for login , sign , forget-pass */
+.btn-custom {
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 12px;
+  transition: background-color 0.3s, transform var(--main-duration);
+  -webkit-transition: background-color 0.3s, transform var(--main-duration);
+  -moz-transition: background-color 0.3s, transform var(--main-duration);
+  -ms-transition: background-color 0.3s, transform var(--main-duration);
+  -o-transition: background-color 0.3s, transform var(--main-duration);
+}
+.btn-custom:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+/* End Default login,signup */
+/* Main-Button */
+.default-btn {
+  background-color: var(--main-color);
+  padding: 8px;
+  margin-right: 5px;
+  font-size: 18px;
+  line-height: 1;
+  box-shadow: 0px 3px 10px rgba(151, 119, 250, 0.4);
+  transition: var(--main-duration);
+  -webkit-transition: var(--main-duration);
+  -moz-transition: var(--main-duration);
+  -ms-transition: var(--main-duration);
+  -o-transition: var(--main-duration);
+}
+.default-btn:hover {
+  background-color: var(--main-alt-color);
+  transform: translateY(-2px);
+}
+.btn-animate {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--main-color);
+  display: inline-block;
+  position: relative;
+  padding-left: 13px;
+}
+.btn-animate::before {
+  content: "";
+  background: var(--main-color);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  margin-top: -3px;
+  animation: shadow-pulse 1s infinite;
+  -webkit-animation: shadow-pulse 1s infinite;
+}
+.browse-more-btn {
+  display: block;
+  margin: 10px auto;
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 50px;
+  font-weight: bold;
+  padding: 10px 20px;
+  align-items: center;
+  border: none;
+  font-size: 1.2rem;
+  transition: var(--main-duration);
+  -webkit-transition: var(--main-duration);
+  -moz-transition: var(--main-duration);
+  -ms-transition: var(--main-duration);
+  -o-transition: var(--main-duration);
+}
+.browse-more-btn:hover {
+  background-color: var(--main-alt-color);
+}
+.browse-more-btn i {
+  margin-left: 10px;
+  font-size: 1.4rem;
+  border: 1px solid var(--main-alt-color);
+  border-radius: 20px;
+  padding: 5px;
+  background-color: var(--main-alt-color);
+}
+.browse-more-btn i:hover {
+  background-color: #4c6ef5;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+}
+.page-number {
+  font-weight: bold;
+  margin: 0 10px;
+}
+.page-btn {
+  padding: 5px 10px;
+  border-radius: 50%;
+  border: none;
+  color: #fff;
+  background-color: var(--main-color);
+}
+.page-btn:hover {
+  background: var(--main-alt-color);
+}
+.page-item.disabled .page-btn {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+/* End Main-Button */
+/* Start Search-Component */
+.main-search {
+  background-color: var(--main-color);
+  height: fit-content;
+  color: white;
+}
+.custom-head {
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 700;
+}
+.search-bar .input-group-text {
+  background-color: transparent;
+  border: none;
+}
+.search-bar {
+  width: fit-content;
+  display: contents;
+}
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input,
+input::placeholder {
+  border-radius: 10px;
+  border: none;
+  color: #777;
+}
+@media (max-width: 992px) {
+  .btn-custom {
+    display: inline-block;
+    width: fit-content;
+    margin: 10px auto 0;
+  }
+}
+/* End Search-Component */
+/* End Default Styles */
+/* Main Heading title */
+.main-title {
+  position: relative;
+  margin: 0 auto 15px;
+  width: fit-content;
+  font-size: 30px;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 2px solid;
+  padding: 10px 20px;
+  z-index: 1;
+}
+.main-title:hover {
+  color: white;
+  border: 2px solid white;
+  transition-delay: 0.5s;
+}
+.main-title::before,
+.main-title::after {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  background-color: var(--main-color);
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.main-title::before {
+  left: -24px;
+}
+.main-title:hover::before {
+  animation: left-move 0.5s linear forwards;
+  -webkit-animation: left-move 0.5s linear forwards;
+  z-index: -1;
+}
+.main-title::after {
+  right: -24px;
+}
+.main-title:hover::after {
+  animation: right-move 0.5s linear forwards;
+  -webkit-animation: right-move 0.5s linear forwards;
+  z-index: -1;
+}
+.com-color {
+  animation: colorAnimation 5s infinite;
+  -webkit-animation: colorAnimation 5s infinite;
+}
+.email-animate {
+  animation: colorAnimation 5s infinite;
+  -webkit-animation: colorAnimation 5s infinite;
+  cursor: pointer;
+}
+/* End Main Heading title */
+/* Start Animation IN Scrolling */
+.fade-in-up {
+  opacity: 0; /* Default state before animation */
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Initial state for elements before animation */
+[appScrollAnimate] {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+/* Active state for elements after scroll */
+[appScrollAnimate].active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Start The Animation */
+/* CSS for the fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shadow-pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba(151, 119, 250, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0);
+  }
+}
+@keyframes left-move {
+  50% {
+    left: 0;
+    width: 13px;
+    height: 13px;
+  }
+  100% {
+    left: 0;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+  }
+}
+@keyframes right-move {
+  50% {
+    right: 0;
+    width: 13px;
+    height: 13px;
+  }
+  100% {
+    right: 0;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+  }
+}
+@keyframes change-background {
+  0%,
+  100% {
+    background-image: url(/assets/images/Log-in/Log-in-alt-1.jpg);
+  }
+  50% {
+    background-image: url(/assets/images/Log-in/Log-in-alt-2.jpg);
+  }
+}
+@keyframes colorAnimation {
+  0% {
+    color: #aaa; /* Default text color */
+  }
+  50% {
+    color: var(--main-color); /* Blue color */
+  }
+  100% {
+    color: #aaa; /* Back to default color */
+  }
+}
+@keyframes colorAnimation {
+  0% {
+    color: inherit; /* Default text color */
+  }
+  50% {
+    color: var(--main-color); /* Blue color */
+    font-weight: 700;
+  }
+  100% {
+    color: inherit; /* Back to default color */
+  }
+}
+/* End The Animation */
+/* End Animation IN Scrolling */
