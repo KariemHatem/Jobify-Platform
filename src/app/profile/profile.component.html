@@ -1,0 +1,217 @@
+<div class="container mt-5">
+  <h3 class="text-center container head-title">
+    Welcome : {{ user?.firstName }} {{ user.lastName }}
+  </h3>
+</div>
+<div class="container">
+  <div class="card mt-4">
+    <div class="card-header bg-white border-0">
+      <h5 class="text-muted">Personal Info</h5>
+    </div>
+    <div class="card-body">
+      <!-- Profile Image -->
+      <div class="d-flex align-items-center mb-4">
+        <div class="me-3">
+          <img
+            *ngIf="user.photo; else placeholder"
+            [src]="user.photo"
+            class="rounded-circle"
+            alt="Profile Image"
+          />
+          <ng-template #placeholder>
+            <img
+              src="https://via.placeholder.com/100"
+              class="rounded-circle"
+              alt="Placeholder Image"
+            />
+          </ng-template>
+          <input
+            type="file"
+            (change)="uploadPhoto($event)"
+            accept="image/*"
+            class="d-none"
+            #fileInput
+          />
+        </div>
+        <div>
+          <button
+            class="btn btn-outline-secondary btn-sm me-2 rounded-2"
+            (click)="fileInput.click()"
+          >
+            Change
+          </button>
+          <button
+            class="btn btn-outline-danger btn-sm rounded-2"
+            (click)="removePhoto()"
+          >
+            Remove
+          </button>
+        </div>
+      </div>
+
+      <!-- Personal Info Form -->
+      <form (ngSubmit)="updateProfile()">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="First Name"
+              [(ngModel)]="user.firstName"
+              name="firstName"
+            />
+          </div>
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Last Name"
+              [(ngModel)]="user.lastName"
+              name="lastName"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Location"
+              [(ngModel)]="user.location"
+              name="location"
+            />
+          </div>
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Phone"
+              [(ngModel)]="user.phone"
+              name="phone"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Professional Headline"
+            [(ngModel)]="user.headline"
+            name="headline"
+          />
+        </div>
+
+        <div class="mb-3">
+          <textarea
+            class="form-control"
+            rows="4"
+            placeholder="Short Bio"
+            [(ngModel)]="user.bio"
+            name="bio"
+          ></textarea>
+        </div>
+
+        <!-- Upload CV Section -->
+        <div class="mb-3">
+          <label for="cv" class="form-label">Upload CV</label>
+          <input
+            type="file"
+            class="form-control"
+            id="cv"
+            (change)="uploadCV($event)"
+          />
+        </div>
+
+        <!-- Location Preferences -->
+        <h6>Location Preferences</h6>
+        <div class="form-check mb-3">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            [(ngModel)]="user.openToRemote"
+            name="openToRemote"
+            (change)="onlyOneCheckbox('remote')"
+          />
+          <label class="form-check-label">Open to Remote</label>
+        </div>
+        <div class="form-check mb-3">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            [(ngModel)]="user.openToRelocation"
+            name="openToRelocation"
+            (change)="onlyOneCheckbox('relocation')"
+          />
+          <label class="form-check-label">Open to Relocation</label>
+        </div>
+
+        <!-- Online Presence -->
+        <h6>Online and Social Presence</h6>
+        <div class="row mb-3">
+          <div
+            class="col-md-6 "
+          >
+
+            <input
+              type="text"
+              class="form-control"
+              placeholder="LinkedIn"
+              [(ngModel)]="user.linkedin"
+              name="linkedin"
+            />
+          </div>
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Twitter"
+              [(ngModel)]="user.twitter"
+              name="twitter"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Website"
+              [(ngModel)]="user.website"
+              name="website"
+            />
+          </div>
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Video"
+              [(ngModel)]="user.video"
+              name="video"
+            />
+          </div>
+        </div>
+
+        <!-- Additional Sections -->
+        <div class="mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Additional Skills"
+            [(ngModel)]="user.skills"
+            name="skills"
+          />
+        </div>
+        <button type="submit" class="btn btn-success">Update Profile</button>
+        <button
+          class="btn text-white rounded-2 btn-custom text-align-right"
+          (click)="logout()"
+        >
+          Logout
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container text-center mt-5">
+  <img
+    src="assets/images/not-found/undraw_warning_qn4r.svg"
+    alt="404 Error Illustration"
+    class="img-fluid"
+    style="max-width: 400px"
+  />
+  <h1 class="display-4 mt-4 text-danger">Oops! Page Not Found</h1>
+  <p class="lead text-secondary">
+    The page you are looking for doesn't exist or has been moved.
+  </p>
+  <a [routerLink]="['/home']" class="btn default-btn btn-lg mt-3 text-white">
+    <i class="bi bi-house"></i> Back to Homepage
+  </a>
+
+  <!-- Add subtle animation -->
+  <div class="animation mt-5">
+    <div class="circle"></div>
+    <div class="circle delay"></div>
+    <div class="circle delay2"></div>
+  </div>
+</div>

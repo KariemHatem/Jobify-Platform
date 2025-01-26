@@ -1,0 +1,51 @@
+.card {
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.card-header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: var(--main-color);
+}
+.form-select {
+  font-size: 14px;
+}
+.effect li {
+  position: relative;
+}
+.effect li a {
+  font-size: 16px;
+  color: #636477;
+  position: relative;
+  padding: 14px 22px 10px 35px;
+  transition: var(--main-duration);
+  -webkit-transition: var(--main-duration);
+  -moz-transition: var(--main-duration);
+  -ms-transition: var(--main-duration);
+  -o-transition: var(--main-duration);
+}
+.effect li a::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  opacity: 0.7;
+  transition-duration: 0.2s;
+}
+.effect li a:hover {
+  padding-left: 38px;
+  transition: var(--main-duration);
+  color: var(--main-color);
+  -webkit-transition: var(--main-duration);
+  -moz-transition: var(--main-duration);
+  -ms-transition: var(--main-duration);
+  -o-transition: var(--main-duration);
+}
+.bi-link-45deg {
+  margin-right: 5px;
+  font-size: 18px;
+}

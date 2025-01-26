@@ -1,0 +1,22 @@
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+.bollets {
+  position: relative;
+  font-size: 5px;
+  top: -2px;
+  right: 4px;
+}
+p {
+  line-height: 1.8;
+}
+.text-color {
+  color: #777;
+}
+ul {
+  margin-left: 30px;
+}
+ul li {
+  margin-bottom: 15px;
+}

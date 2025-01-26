@@ -1,0 +1,39 @@
+<div class="main-search d-flex justify-content-center align-items-center">
+  <div class="container my-5">
+    <!-- Header Section -->
+    <div class="mb-4 text-center">
+      <h4 class="custom-head">There Are Many Jobs Here For You!</h4>
+      <p class="text-white">
+        Discover your next career move, freelance gig, or internship
+      </p>
+    </div>
+
+    <!-- Search Bar Section -->
+    <div class="search-bar bg-white p-3 shadow rounded">
+      <div class="row gy-2 bar">
+        <div class="col-lg-3 col-md-3 col-sm-12 mb-2 mb-md-0">
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="fas fa-search text-white"></i>
+            </span>
+
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Job title"
+              [(ngModel)]="searchQuery"
+            />
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-6">
+          <button
+            class="btn default-btn text-white w-100 border-white"
+            (click)="searchJobs()"
+          >
+            Find Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

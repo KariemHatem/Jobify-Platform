@@ -1,0 +1,91 @@
+<div class="contact-page">
+  <!-- Header Section -->
+  <div class="contact-header text-center text-white py-5">
+    <h1>Contact</h1>
+    <nav>
+      <p><a [routerLink]="['/home']" class="text-white">Home</a> / About Us</p>
+    </nav>
+  </div>
+
+  <!-- Contact Form Section -->
+  <div class="container mt-5">
+    <div class="row align-items-center">
+      <!-- Left Section -->
+      <div class="col-lg-6">
+        <h2>Get in touch</h2>
+        <p class="text-muted">
+          Start working with Jobcy that can provide everything you need to
+          generate awareness, drive traffic, and connect.
+        </p>
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label fw-bold">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Enter your name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label fw-bold">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="subject" class="form-label fw-bold">Subject</label>
+            <input
+              type="text"
+              class="form-control"
+              id="subject"
+              placeholder="Enter your subject"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label fw-bold">Your Message</label>
+            <textarea
+              class="form-control"
+              id="message"
+              rows="5"
+              placeholder="Enter your message"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="btn default-btn text-white px-5 py-2 rounded-pill"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- Right Section -->
+      <div class="col-lg-6 text-center">
+        <img
+          src="assets/images/contact/undraw_delivery-address_409g.svg"
+          alt="Contact Illustration"
+          class="img-fluid mb-4"
+        />
+        <div class="contact-details mt-4 text-start">
+          <p class="fnt-light email-animate">
+            <i class="fa-solid fa-location-dot me-2"></i>
+            <strong>Address:</strong> 24 Abbas EL Akkad Street, Cairo,Egypt
+          </p>
+          <p class="fnt-light email-animate">
+            <i class="fa-regular fa-envelope me-2"></i>
+            <strong>Email:</strong> contactus&#64;jobify.com
+          </p>
+          <p class="fnt-light email-animate">
+            <i class="fa-solid fa-headphones me-2"></i>
+            <strong>Phone:</strong> (+088) 223 1245
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

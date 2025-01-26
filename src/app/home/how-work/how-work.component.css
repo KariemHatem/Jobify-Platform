@@ -1,0 +1,93 @@
+.how-it-works-container {
+  background-color: #f9fafc;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.main {
+  padding-left: 30px;
+}
+.title-weight {
+  font-weight: 700;
+}
+.number-circle {
+  width: 85px;
+  height: 55px;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 55px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+.num-one,
+.num-two,
+.num-three {
+  background-color: rgba(116, 120, 141, 0.15);
+  color: #74788d;
+}
+.number-circle::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  background: var(--main-color);
+  transform: translateX(-50%);
+}
+.number-circle::after {
+  top: 61px;
+  height: 72px;
+}
+.how-it-works-list li:first-child .number-circle::before {
+  display: none;
+}
+.how-it-works-list li:last-child .number-circle::after {
+  display: none;
+}
+.how-it-works-list li {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 20px;
+}
+.how-it-works-list li .ml-3 {
+  margin-left: 15px;
+}
+.main p,
+.how-it-works-list p {
+  margin-bottom: 0;
+  color: #777;
+}
+.how-it-works-list h5 {
+  font-weight: 700;
+  cursor: pointer;
+}
+.active-step {
+  color: var(--main-color);
+}
+.active-number {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+.active-h5 {
+  color: var(--main-color);
+}
+
+img.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .how-it-works-list {
+    margin-bottom: 20px;
+  }
+  .col-md-6 {
+    margin-bottom: 20px;
+  }
+
+  .number-circle {
+    height: 50px;
+  }
+}

@@ -1,0 +1,39 @@
+<div class="card mb-4">
+  <h5 class="mb-3">Set job reminder</h5>
+  <p class="text">Enter your email address and get job notification.</p>
+  <form #emailForm="ngForm" (ngSubmit)="onSubmit(emailForm)">
+    <div class="mb-3">
+      <input
+        type="email"
+        class="form-control"
+        placeholder="Enter email address"
+        aria-label="Email address"
+        name="email"
+        required
+        [(ngModel)]="email"
+        #emailInput="ngModel"
+      />
+      <div
+        *ngIf="emailInput.invalid && (emailInput.touched || emailInput.dirty)"
+        class="text-danger"
+      >
+        <div *ngIf="emailInput.errors?.['required']">Email is required.</div>
+        <div *ngIf="emailInput.errors?.['email']">
+          Please enter a valid email address.
+        </div>
+      </div>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="emailForm.invalid"
+    >
+      Submit
+    </button>
+  </form>
+
+  <!-- Success Alert -->
+  <div *ngIf="submitted" class="alert alert-success mt-3" role="alert">
+    Email submitted successfully: {{ email }}
+  </div>
+</div>

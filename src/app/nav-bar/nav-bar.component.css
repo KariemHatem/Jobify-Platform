@@ -1,0 +1,14 @@
+.custom-font {
+  font-size: 16px;
+  font-weight: 500;
+}
+.custom-hover li a {
+  transition: var(--main-duration);
+  -webkit-transition: var(--main-duration);
+  -moz-transition: var(--main-duration);
+  -ms-transition: var(--main-duration);
+  -o-transition: var(--main-duration);
+}
+.custom-hover li a:hover {
+  color: var(--main-color);
+}

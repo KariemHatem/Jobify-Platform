@@ -1,0 +1,164 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <p>
+          Showing {{ (currentPage - 1) * jobsPerPage + 1 }} -
+          {{ currentPage * jobsPerPage }} of {{ totalJobs }} jobs
+        </p>
+        <div class="dropdown">
+          <button
+            class="btn btn-outline-secondary dropdown-toggle"
+            type="button"
+            id="dropdownSort"
+            data-bs-toggle="dropdown"
+          >
+            Sort by:
+            {{
+              sortOption === "newest"
+                ? "Newest Post"
+                : sortOption === "oldest"
+                ? "Oldest Post"
+                : sortOption === "highest"
+                ? "Highest Salary"
+                : sortOption === "alphabetical"
+                ? "Alphabetical"
+                : sortOption === "freelance"
+                ? "Freelance"
+                : sortOption === "partTime"
+                ? "Part Time"
+                : sortOption === "fullTime"
+                ? "Full Time"
+                : sortOption === "remote"
+                ? "Remote"
+                : "Sort"
+            }}
+          </button>
+          <ul class="dropdown-menu effect" aria-labelledby="dropdownSort">
+            <li>
+              <a class="dropdown-item" (click)="onSortChange('newest')"
+                >Newest Post</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" (click)="onSortChange('oldest')"
+                >Oldest Post</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" (click)="onSortChange('highest')"
+                >Highest Salary</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" (click)="onSortChange('alphabetical')"
+                >Alphabetical</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" (click)="onSortChange('freelance')"
+                >Freelance</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" (click)="onSortChange('partTime')"
+                >Part Time</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" (click)="onSortChange('fullTime')"
+                >Full Time</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" (click)="onSortChange('remote')"
+                >Remote</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Job Cards Listing -->
+  <div
+    class="row"
+    *ngFor="let job of filteredJobs.length > 0 ? filteredJobs : paginatedJobs"
+  >
+    <div class="col-md-12">
+      <div class="card mb-3">
+        <div class="card-body d-flex">
+          <div class="job-icon">
+            <img
+              [src]="job.companyLogo"
+              alt="Company Logo"
+              class="rounded-circle"
+              width="50"
+            />
+          </div>
+
+          <div class="ms-3">
+            <h5 class="card-title" (click)="viewJobDetails(job)">
+              {{ job.title }}
+            </h5>
+            <p class="card-text">
+              <strong class="company com-color" (click)="viewJobDetails(job)">{{
+                job.company
+              }}</strong>
+              <span class="info">
+                <i class="fa-solid fa-location-dot"></i> {{ job.location }}
+                <i class="fa-solid fa-briefcase"></i>{{ job.type }}
+                <i class="fa-regular fa-clock"></i> {{ job.posted }}
+                <span class="price">{{ job.salary }}</span>
+              </span>
+            </p>
+            <p class="desc-text">{{ job.description }}</p>
+
+            <div class="d-flex">
+              <span *ngIf="job.urgent" class="btn btn-1-color">Urgent</span>
+              <span *ngIf="job.senior" class="btn btn-2-color">Senior</span>
+              <span *ngIf="job.fullTime" class="btn btn-3-color">
+                <i class="fa-solid fa-circle"></i> Full time
+              </span>
+            </div>
+            <span class="app-btn">
+              <button
+                class="btn text-white rounded-2 default-btn"
+                (click)="applyForJob(job)"
+              >
+                Apply Now
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination Slider -->
+  <div class="d-flex justify-content-center my-4">
+    <nav>
+      <ul class="pagination align-items-center">
+        <!-- Previous Button -->
+        <li class="page-item" [class.disabled]="currentPage === 1">
+          <button class="page-btn" (click)="onPageChange(currentPage - 1)">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+        </li>
+
+        <!-- Current Page Display -->
+        <li class="page-item">
+          <span class="page-number">{{ currentPage }} / {{ totalPages }}</span>
+        </li>
+
+        <!-- Next Button -->
+        <li class="page-item" [class.disabled]="currentPage === totalPages">
+          <button class="page-btn" (click)="onPageChange(currentPage + 1)">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="card shadow">
+  <div class="card-header text-white">
+    <h5 class="mb-0">Additional Resources</h5>
+    <small>Find curated links to prepare for your interviews</small>
+    <select
+      class="form-select mt-2"
+      [(ngModel)]="selectedCategory"
+      (change)="filterResources()"
+    >
+      <option *ngFor="let category of resourceCategories" [value]="category">
+        {{ category }}
+      </option>
+    </select>
+  </div>
+  <div class="card-body">
+    <div *ngIf="filteredResources.length; else noResources">
+      <ul class="list-group">
+        <li *ngFor="let resource of filteredResources" class="list-group-item">
+          <p class="fw-bold">{{ resource.category }} Resources:</p>
+          <ul>
+            <div class="effect">
+              <li *ngFor="let link of resource.links">
+                <hr />
+                <a
+                  [href]="link.url"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <i class="bi bi-link-45deg text-primary"></i> {{ link.title }}
+                </a>
+              </li>
+            </div>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <ng-template #noResources>
+      <p class="text-muted text-center mt-3">
+        No resources available for this category.
+      </p>
+    </ng-template>
+  </div>
+</div>

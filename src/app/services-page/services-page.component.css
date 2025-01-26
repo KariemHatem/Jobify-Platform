@@ -1,0 +1,21 @@
+.card-body {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-body:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  -o-transform: translateY(-2px);
+}
+.icon,
+.link-color {
+  color: var(--main-color);
+}
+.breadcrumb a {
+  color: #ffc107;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+}

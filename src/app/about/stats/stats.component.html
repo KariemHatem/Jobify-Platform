@@ -1,0 +1,6 @@
+<div #statsSection class="stats-container d-flex justify-content-around py-5">
+  <div *ngFor="let stat of stats" class="text-center">
+    <h2 class="stat-value">{{ stat.value | number }}</h2>
+    <p class="text-muted">{{ stat.label }}</p>
+  </div>
+</div>

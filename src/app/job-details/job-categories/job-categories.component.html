@@ -1,0 +1,12 @@
+<div class="job-categories" appScrollAnimate>
+  <h5>Are you also Search for!</h5>
+  <ul>
+    <li
+      *ngFor="let category of categories"
+      class="category-item text-muted"
+      appScrollAnimate
+    >
+      <i class="fa-solid fa-circle"></i> {{ category }}
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,14 @@
+.container {
+  max-width: 1200px;
+}
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+h4 {
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+.content {
+  padding-top: calc(var(--section-padding) - 30px);
+}

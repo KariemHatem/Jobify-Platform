@@ -1,0 +1,114 @@
+<div class="container mt-5">
+  <!-- Job Application Tag -->
+  <div class="text-center mb-4">
+    <h1 class="title">Apply for {{ applicant.jobTitle }}</h1>
+  </div>
+
+  <!-- Heading -->
+  <div class="text-center">
+    <h1 style="font-size: 2.5rem; font-weight: bold">
+      Start Your Career Today
+    </h1>
+    <p class="text-muted">
+      Please fill in your information and Apply For This Job
+    </p>
+  </div>
+
+  <!-- Success Alert Message -->
+  <div *ngIf="showSuccessAlert" class="alert alert-success" role="alert">
+    You have applied successfully for this job!
+  </div>
+
+  <!-- Application Form -->
+  <form (ngSubmit)="onSubmit()" #applyForm="ngForm">
+    <!-- Full Name -->
+    <div class="mb-4">
+      <label for="name" class="form-label">Full Name *</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        required
+        placeholder="Your full name"
+        [(ngModel)]="applicant.name"
+        name="name"
+      />
+    </div>
+
+    <!-- Email -->
+    <div class="mb-4">
+      <label for="email" class="form-label">Email *</label>
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        required
+        placeholder="Your email address"
+        [(ngModel)]="applicant.email"
+        name="email"
+      />
+    </div>
+
+    <!-- Phone Number -->
+    <div class="mb-4">
+      <label for="phone" class="form-label">Contact Number *</label>
+      <input
+        type="tel"
+        id="phone"
+        class="form-control"
+        required
+        placeholder="(+01) 234 567 89"
+        [(ngModel)]="applicant.phone"
+        name="phone"
+      />
+    </div>
+
+    <!-- Description -->
+    <div class="mb-4">
+      <label for="description" class="form-label">Description</label>
+      <textarea
+        id="description"
+        class="form-control"
+        rows="3"
+        placeholder="Your description..."
+        [(ngModel)]="applicant.description"
+        name="description"
+      ></textarea>
+    </div>
+
+    <!-- Upload Resume -->
+    <div class="mb-4">
+      <label for="resume" class="form-label">Upload Resume</label>
+      <input
+        type="file"
+        id="resume"
+        class="form-control"
+        required
+        (change)="onFileChange($event)"
+      />
+    </div>
+
+    <!-- Agree to Terms -->
+    <div class="mb-4 form-check">
+      <input type="checkbox" id="terms" class="form-check-input" required />
+      <label for="terms" class="form-check-label">
+        Agree our terms and policy
+      </label>
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      class="btn btn-primary w-100"
+      [disabled]="!applyForm.form.valid"
+    >
+      Apply Job
+    </button>
+  </form>
+
+  <!-- Support -->
+  <div class="text-center mt-3">
+    <p>Do you need support? <a href="#" class="text-muted">Contact Us</a></p>
+  </div>
+</div>
+<app-footer class="mt-4"></app-footer>

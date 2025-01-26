@@ -1,0 +1,17 @@
+.dropdown ul li {
+  cursor: pointer;
+}
+.page-btn {
+  padding: 5px 10px;
+  border-radius: 50%;
+  border: none;
+  color: #fff;
+  background-color: var(--main-color);
+}
+.page-btn:hover {
+  background: var(--main-alt-color);
+}
+.page-item.disabled .page-btn {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

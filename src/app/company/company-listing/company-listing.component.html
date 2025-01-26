@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <p>
+        Showing {{ (currentPage - 1) * companiesPerPage + 1 }} -
+        {{ currentPage * companiesPerPage }} of {{ totalcompanies }} jobs
+      </p>
+    </div>
+  </div>
+  <div
+    class="col-lg-3 col-md-4 col-sm-6 mb-4"
+    *ngFor="
+      let company of filteredCompanies.length > 0
+        ? filteredCompanies
+        : paginatedCompanies
+    "
+  >
+    <div class="card rounded-4">
+      <div class="card-body text-center">
+        <img
+          [src]="company.companyLogo"
+          alt="{{ company.company }} Logo"
+          class="mb-3 rounded-circle"
+        />
+        <h5 class="card-title mb-3 com-color">{{ company.company }}</h5>
+        <p class="text-muted small">{{ company.title }}</p>
+        <div class="text-warning mb-2"></div>
+        <div class="category d-flex justify-content-center">
+          <p class="text-muted small mb-1">
+            <i class="fa-solid fa-location-dot"></i> {{ company.location }}
+          </p>
+          <p class="text-muted small mb-3">
+            <i class="fa-solid fa-briefcase"></i> {{ company.category }}
+          </p>
+        </div>
+        <button
+          class="btn btn-outline-primary w-100"
+          (click)="viewJobDetails(company)"
+        >
+          Show Info
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Pagination Slider -->
+  <div class="d-flex justify-content-center my-4">
+    <nav>
+      <ul class="pagination align-items-center">
+        <!-- Previous Button -->
+        <li class="page-item" [class.disabled]="currentPage === 1">
+          <button class="page-btn" (click)="onPageChange(currentPage - 1)">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+        </li>
+
+        <!-- Current Page Display -->
+        <li class="page-item">
+          <span class="page-number">{{ currentPage }} / {{ totalPages }}</span>
+        </li>
+
+        <!-- Next Button -->
+        <li class="page-item" [class.disabled]="currentPage === totalPages">
+          <button class="page-btn" (click)="onPageChange(currentPage + 1)">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

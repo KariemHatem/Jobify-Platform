@@ -1,0 +1,15 @@
+<app-job-search (searchEvent)="handleSearch($event)"></app-job-search>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-3">
+      <app-reminder></app-reminder>
+      <app-job-filter></app-job-filter>
+    </div>
+    <div class="col-lg-9">
+      <app-job-listing [searchQuery]="searchQuery"></app-job-listing>
+    </div>
+    <app-trusted-companies></app-trusted-companies>
+    <app-subscription></app-subscription>
+    <app-footer></app-footer>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+h5 {
+  font-size: 16px;
+  font-weight: 800;
+  margin: 50px 0 20px;
+}
+.category-item {
+  margin: 10px 0;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  transition: var(--main-duration);
+  -webkit-transition: var(--main-duration);
+  -moz-transition: var(--main-duration);
+  -ms-transition: var(--main-duration);
+  -o-transition: var(--main-duration);
+}
+.category-item:hover {
+  color: var(--main-color) !important;
+  cursor: pointer;
+  font-weight: 700;
+}
+i {
+  margin-right: 10px;
+  font-size: 5px;
+}
+@media (min-width: 1200px) {
+  .job-categories {
+    margin-top: 111px;
+    padding: 50px 74px;
+  }
+  h5 {
+    margin: 0 0 20px;
+  }
+}

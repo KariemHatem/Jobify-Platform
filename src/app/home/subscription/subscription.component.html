@@ -1,0 +1,49 @@
+<div class="main" appScrollAnimate>
+  <div class="container text-white py-5 subscribe">
+    <div
+      *ngIf="isSubscribed"
+      class="alert alert-success text-center alert-top"
+      role="alert"
+    >
+      You have successfully subscribed!
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6 text-center">
+        <h2>Subscribe to get the latest jobs</h2>
+        <form
+          [formGroup]="subscribeForm"
+          (ngSubmit)="onSubmit()"
+          class="d-flex align-items-center justify-content-center mt-4 form-main"
+        >
+          <input
+            type="email"
+            formControlName="email"
+            class="form-control me-2"
+            placeholder="Enter Your Email"
+            [ngClass]="{
+              'is-invalid':
+                subscribeForm.get('email')?.invalid &&
+                subscribeForm.get('email')?.touched
+            }"
+          />
+          <button
+            class="btn btn-lg btn-purple d-flex align-items-center justify-content-center"
+            type="submit"
+            [disabled]="subscribeForm.invalid"
+          >
+            Subscribe <i class="fa-regular fa-paper-plane"></i>
+          </button>
+        </form>
+        <div
+          *ngIf="
+            subscribeForm.get('email')?.invalid &&
+            subscribeForm.get('email')?.touched
+          "
+          class="text-danger mt-2"
+        >
+          Please enter a valid email.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

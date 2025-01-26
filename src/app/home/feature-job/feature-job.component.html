@@ -1,0 +1,52 @@
+<div class="container mt-5">
+  <h1 class="text-center fw-bold main-title">Featured Jobs</h1>
+  <p class="text-center title">
+    The #1 Job Board for Hiring Creative Professionals
+  </p>
+  <div class="row section-main" [routerLink]="['/job-list']">
+    <div class="col-lg-6 col-md-6 col-sm-12" *ngFor="let job of jobs">
+      <div class="job-card fade-in-up" appScrollAnimate>
+        <div class="job-header d-flex">
+          <img [src]="job.imgSrc" [alt]="job.title" class="job-image" />
+          <div class="info" appScrollAnimate>
+            <a class="fw-bold m-auto d-flex">{{ job.title }}</a>
+            <a class="fw-bold a-custom" [routerLink]="['/company']">{{
+              job.company
+            }}</a>
+            <span class="location-custom">
+              <i class="fa-solid fa-location-dot"></i>
+              {{ job.location }}
+            </span>
+            <span class="job-custom">
+              <i class="fa-solid fa-briefcase"></i>
+              {{ job.jobType }}
+            </span>
+            <span class="time-custom">
+              <i class="fa-regular fa-clock"></i>
+              {{ job.postedTime }}
+            </span>
+            <span class="price">{{ job.salary }}</span>
+          </div>
+        </div>
+        <p class="main-text">{{ job.description }}</p>
+        <span *ngIf="job.urgent" class="btn btn-1-color">Urgent</span>
+        <span *ngIf="job.senior" class="btn btn-2-color">Senior</span>
+        <span *ngIf="job.fullTime" class="btn btn-3-color">
+          <i class="fa-solid fa-circle"></i> Full time
+        </span>
+        <div class="icons">
+          <a href="#"><i class="fa-regular fa-circle-check"></i></a>
+          <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="browse-more-btn" [routerLink]="['/job-list']" appScrollAnimate>
+    Browse More
+    <i class="fa-solid fa-angles-right"></i>
+  </button>
+</div>
+<app-how-work></app-how-work>
+<app-trusted-companies></app-trusted-companies>
+<app-subscription></app-subscription>
+<app-about-us></app-about-us>

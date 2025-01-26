@@ -1,0 +1,19 @@
+.container {
+  max-width: 600px;
+  margin: auto;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+.title {
+  color: var(--head-title);
+  border: none;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: -19px;
+}
+.pos-ended {
+  margin-left: 25px;
+}

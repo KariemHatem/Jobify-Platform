@@ -1,0 +1,35 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+.category {
+  gap: 50px;
+}
+.card-title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.btn {
+  transition: var(--main-duration);
+}
+.btn-outline-primary {
+  color: var(--main-color);
+  border-color: var(--main-color);
+}
+.btn-outline-primary:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}

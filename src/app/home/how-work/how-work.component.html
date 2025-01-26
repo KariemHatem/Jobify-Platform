@@ -1,0 +1,104 @@
+<div class="how-it-works-container py-5">
+  <div class="container">
+    <div class="row" appScrollAnimate>
+      <!-- Left side with steps -->
+      <div class="col-md-6">
+        <div class="main">
+          <h2 class="mb-4 title-weight">How It Works</h2>
+          <p class="mb-5">
+            Post a job to tell us about your project. We'll quickly match you
+            with the right freelancers.
+          </p>
+        </div>
+
+        <ul class="how-it-works-list list-unstyled position-relative">
+          <!-- Step 1 -->
+          <li
+            appScrollAnimate
+            class="d-flex mb-5 position-relative"
+            (click)="setActive(1)"
+            [ngClass]="{ 'active-step': activeStep === 1 }"
+          >
+            <div
+              class="number-circle num-one d-flex justify-content-center align-items-center"
+              [ngClass]="{ 'active-number': activeStep === 1 }"
+            >
+              1
+            </div>
+            <div class="ml-3">
+              <h5 [ngClass]="{ 'active-h5': activeStep === 1 }">
+                Register an account
+              </h5>
+              <p>
+                Due to its widespread use as filler text for layouts,
+                non-readability is of great importance.
+              </p>
+            </div>
+            <div class="line-connector position-absolute"></div>
+            <!-- Line connector -->
+          </li>
+
+          <!-- Step 2 -->
+          <li
+            appScrollAnimate
+            class="d-flex mb-5 position-relative"
+            (click)="setActive(2)"
+            [ngClass]="{ 'active-step': activeStep === 2 }"
+          >
+            <div
+              class="number-circle num-two d-flex justify-content-center align-items-center"
+              [ngClass]="{ 'active-number': activeStep === 2 }"
+            >
+              2
+            </div>
+            <div class="ml-3">
+              <h5 [ngClass]="{ 'active-h5': activeStep === 2 }">
+                Find your job
+              </h5>
+              <p>
+                There are many variations of passages of avaibookmark-label, but
+                the majority alteration in some form.
+              </p>
+            </div>
+            <div class="line-connector position-absolute"></div>
+            <!-- Line connector -->
+          </li>
+
+          <!-- Step 3 -->
+          <li
+            appScrollAnimate
+            class="d-flex position-relative"
+            (click)="setActive(3)"
+            [ngClass]="{ 'active-step': activeStep === 3 }"
+          >
+            <div
+              class="number-circle num-three d-flex justify-content-center align-items-center"
+              [ngClass]="{ 'active-number': activeStep === 3 }"
+            >
+              3
+            </div>
+            <div class="ml-3">
+              <h5 [ngClass]="{ 'active-h5': activeStep === 3 }">
+                Apply for job
+              </h5>
+              <p>
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right side with image -->
+      <div class="col-md-6 text-center">
+        <img
+          [src]="currentImage"
+          class="img-fluid"
+          alt="Illustration"
+          appScrollAnimate
+        />
+      </div>
+    </div>
+  </div>
+</div>

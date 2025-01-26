@@ -1,0 +1,20 @@
+<div class="container my-5">
+  <h1 class="fw-bold main-title text-center">Companies</h1>
+  <p class="text-center title">Trusted By Leading Companies</p>
+  <div class="row justify-content-center text-center">
+    <div class="col-12 mb-4" appScrollAnimate></div>
+    <div class="col-12" appScrollAnimate>
+      <div class="d-flex flex-wrap justify-content-center align-items-center">
+        <div
+          class="mx-3 mb-3"
+          *ngFor="let company of companies"
+          appScrollAnimate
+        >
+          <p class="trusted-company" [routerLink]="['/company']">
+            {{ company.name }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

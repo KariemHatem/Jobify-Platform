@@ -1,0 +1,45 @@
+<div class="container-fluid bg-color text-white py-5 main-search">
+  <div class="container text-center">
+    <h1 class="mb-3">Services</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center">
+        <li class="breadcrumb-item">
+          <a [routerLink]="['/home']" class="text-white">Home</a>
+        </li>
+        <li class="breadcrumb-item active text-white" aria-current="page">
+          Services
+        </li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold">
+      Providing our trusted <span class="text-warning">Services</span>
+    </h2>
+    <p class="text-muted">
+      It is a long established fact that a reader will be of a page when
+      established fact looking at its layout.
+    </p>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let service of services">
+      <div class="card h-100 text-center border-0">
+        <div class="card-body">
+          <div class="mb-3">
+            <i [class]="'fa ' + service.icon + ' icon fs-2'"></i>
+          </div>
+          <h5 class="card-title fw-bold">{{ service.title }}</h5>
+          <p class="card-text text-muted">{{ service.description }}</p>
+          <a [routerLink]="service.link" class="link-color text-decoration-none"
+            >Learn More &gt;</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-subscription></app-subscription>
+<app-footer></app-footer>

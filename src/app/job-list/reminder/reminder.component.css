@@ -1,0 +1,34 @@
+.card {
+  border-radius: 10px;
+  background: rgb(231 240 254);
+  padding: 30px 10px;
+  /* width: 350px; */
+  margin: auto;
+}
+.text {
+  font-size: 16px;
+  line-height: 22px;
+  color: #999;
+}
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.text-danger {
+  font-size: 0.9rem;
+}
+.alert {
+  font-size: 0.9rem;
+}
+.btn-primary {
+  background-color: var(--main-color);
+  border: none;
+}
+.btn-primary:hover {
+  background-color: var(--main-alt-color);
+}
+.alert-success {
+  background-color: #e6ffed;
+  color: #38a169;
+  border-color: #c6f6d5;
+}

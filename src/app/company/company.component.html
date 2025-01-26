@@ -1,0 +1,9 @@
+<app-company-search (searchEvent)="handleSearch($event)"></app-company-search>
+<div class="container my-5">
+  <div class="row">
+    <app-company-listing [searchQuery]="searchQuery"></app-company-listing>
+    <app-trusted-companies></app-trusted-companies>
+    <app-subscription></app-subscription>
+  </div>
+</div>
+<app-footer></app-footer>

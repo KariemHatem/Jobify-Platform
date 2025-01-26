@@ -1,0 +1,33 @@
+.container {
+  margin-top: 10%;
+}
+.animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  position: relative;
+}
+.circle {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  animation: bounce 1.5s infinite;
+}
+.circle.delay {
+  animation-delay: 0.3s;
+}
+.circle.delay2 {
+  animation-delay: 0.6s;
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}

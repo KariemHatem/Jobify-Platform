@@ -1,0 +1,68 @@
+<div class="card shadow-sm mb-4">
+  <h4 class="text-center">Available Jobs</h4>
+  <!-- Job Type Section -->
+  <h5>Job Type</h5>
+  <div *ngFor="let jobType of jobTypes" class="form-check mb-3">
+    <!-- Dynamically create job type checkboxes -->
+    <input
+      class="form-check-input"
+      type="checkbox"
+      [id]="jobType.id"
+      [(ngModel)]="jobType.selected"
+    />
+    <label class="form-check-label" [for]="jobType.id">
+      {{ jobType.name }}
+      <span class="badge">{{ jobType }}</span>
+    </label>
+  </div>
+
+  <!-- Experience Level Section -->
+  <h5>Experience Level</h5>
+  <div *ngFor="let experience of experienceLevels" class="form-check mb-3">
+    <!-- Dynamically create experience level checkboxes -->
+    <input
+      class="form-check-input"
+      type="checkbox"
+      [id]="experience.id"
+      [(ngModel)]="experience.selected"
+    />
+    <label class="form-check-label" [for]="experience.id">
+      {{ experience.name }}
+      <span class="badge">{{ experience }}</span>
+    </label>
+  </div>
+
+  <!-- Salary Range Section -->
+  <h5>Salary Range</h5>
+  <div class="salary-range-slider mb-3">
+    <!-- Salary range input for lower bound -->
+    <input
+      type="range"
+      class="form-range"
+      min="1500"
+      max="60000"
+      step="500"
+      [(ngModel)]="salaryFrom"
+      (input)="onSalaryChange()"
+      id="salaryFrom"
+    />
+    <!-- Salary range input for upper bound -->
+    <input
+      type="range"
+      class="form-range"
+      min="1500"
+      max="60000"
+      step="500"
+      [(ngModel)]="salaryTo"
+      (input)="onSalaryChange()"
+      id="salaryTo"
+    />
+    <div class="d-flex justify-content-between mt-2">
+      <!-- Display selected salary range -->
+      <span class="salary-custom"
+        >From: {{ salaryFrom | currency : "USD" }}</span
+      >
+      <span class="salary-custom">To: {{ salaryTo | currency : "USD" }}</span>
+    </div>
+  </div>
+</div>

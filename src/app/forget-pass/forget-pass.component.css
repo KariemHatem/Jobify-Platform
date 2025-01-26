@@ -1,0 +1,27 @@
+.card-container {
+  padding-top: calc(var(--section-padding) - 16px);
+  padding-bottom: calc(var(--section-padding) + 14px);
+}
+.card {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 500px;
+}
+@media (max-width: 768px) {
+  .card {
+    max-width: 400px;
+  }
+}
+img {
+  width: 150px;
+}
+h4 {
+  font-size: 18px;
+}
+p {
+  font-size: 14px;
+  font-weight: 500;
+}
+.btn-primary {
+  background-color: #0062cc;
+  border: none;
+}

@@ -1,0 +1,76 @@
+<div class="card p-4 mb-4 shadow-sm">
+  <!-- Company name and logo -->
+  <div class="d-flex align-items-center mb-3">
+    <img [src]="job.companyLogo" alt="Company Logo" class="company-logo me-3" />
+    <h2 class="h5 mb-0 high-title">{{ job.title }}</h2>
+  </div>
+
+  <p>{{ job.description }}</p>
+
+  <!-- Buttons (aligned side by side) -->
+  <div class="d-flex justify-content-start gap-3 mb-3">
+    <button
+      class="btn text-white rounded-2 default-btn"
+      (click)="applyForJob(job)"
+    >
+      Apply Now
+    </button>
+
+    <button
+      class="btn text-white custom-btn default-btn opt-btn"
+      (click)="saveJob(job)"
+    >
+      Save Job
+    </button>
+  </div>
+
+  <hr />
+
+  <!-- Job details -->
+  <div class="d-flex justify-content-start gap-2 icon-info">
+    <i class="fa-solid fa-briefcase"></i>
+    <h3 class="h6">Job Type</h3>
+  </div>
+  <p class="fnt-light mb-3">{{ job.type }}</p>
+
+  <div class="d-flex justify-content-start gap-2 icon-info">
+    <i class="fa-solid fa-location-dot"></i>
+    <h3 class="h6">Location</h3>
+  </div>
+  <p class="fnt-light mb-3">{{ job.location }}</p>
+
+  <div class="d-flex justify-content-start gap-2 icon-info">
+    <i class="fa-solid fa-dollar-sign"></i>
+    <h3 class="h6">Salary</h3>
+  </div>
+  <p class="fnt-light mb-3">{{ job.salary }}</p>
+
+  <div class="d-flex justify-content-start gap-2 icon-info">
+    <i class="fa-regular fa-clock"></i>
+    <h3 class="h6">Date posted</h3>
+  </div>
+  <p class="fnt-light mb-3">{{ job.posted }}</p>
+
+  <div class="d-flex justify-content-start gap-2 icon-info">
+    <i class="fa-solid fa-business-time ex-animate"></i>
+    <h3 class="h6">Expiration date</h3>
+  </div>
+  <p class="fnt-light">{{ job.expirationDate }}</p>
+
+  <hr />
+
+  <!-- Contact Info -->
+  <h3 class="h6 sub-title">Contact Info</h3>
+  <div class="d-flex justify-content-start gap-2 icon-info mb-3">
+    <i class="fa-solid fa-location-dot"></i>
+    <p class="fnt-light">{{ job.location }}</p>
+  </div>
+  <div class="d-flex justify-content-start gap-2 icon-info mb-3">
+    <i class="fa-solid fa-headphones"></i>
+    <p class="fnt-light">{{ job.phone }}</p>
+  </div>
+  <div class="d-flex justify-content-start gap-2 icon-info mb-3">
+    <i class="fa-regular fa-envelope"></i>
+    <p class="fnt-light email-animate">{{ job.email }}</p>
+  </div>
+</div>
