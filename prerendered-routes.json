@@ -1,0 +1,19 @@
+{
+  "routes": [
+    "/about",
+    "/apply-now",
+    "/company",
+    "/contact",
+    "/forget-pass",
+    "/home",
+    "/job-details",
+    "/job-list",
+    "/login",
+    "/mock-interview",
+    "/notification",
+    "/profile",
+    "/saved-job",
+    "/services-page",
+    "/signup"
+  ]
+}
