@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./saved-job.component.css'],
 })
 export class SavedJobComponent implements OnInit {
-  savedJobs: any[] = []; // Array to store the saved jobs.
+  savedJobs: any[] = []; // Array to store the saved jobs
   selectedJob: any; // Job selected for removal
   isModalVisible: boolean = false; // Controls modal visibility
 
