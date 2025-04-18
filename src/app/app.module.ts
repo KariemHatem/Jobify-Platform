@@ -56,6 +56,7 @@ import { FeaturesComponent } from './about/features/features.component';
 import { GetStartedComponent } from './about/get-started/get-started.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { ChatbotButtonComponent } from './chatbot-button/chatbot-button.component';
 
 // import { AuthGuard } from './auth.guard'; // Import AuthGuard
 
@@ -108,6 +109,7 @@ import { AboutComponent } from './about/about.component';
     GetStartedComponent,
     ContactComponent,
     AboutComponent,
+    ChatbotButtonComponent,
   ],
   imports: [
     BrowserModule,
